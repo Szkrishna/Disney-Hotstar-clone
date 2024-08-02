@@ -8,7 +8,9 @@ import {
   HiPlayCircle,
   HiTv,
 } from "react-icons/hi2";
+import { TbPremiumRights } from "react-icons/tb";
 import HeaderItems from "./HeaderItems";
+import { HiPlus, HiDotsVertical } from "react-icons/hi"
 
 function Header() {
   const menu = [
@@ -40,20 +42,33 @@ function Header() {
     {
       title: "Premium",
       link: "/premium",
-      icon: HiHome,
+      icon: TbPremiumRights,
     },
   ];
 
   return (
-    <div className="px-10 py-2 flex items-center justify-between">
-      <div className="flex gap-8">
+    <div className="px-10 py-3 flex items-center justify-between">
+      <div className="flex gap-6">
         <img
           src={logo}
           className="w-[50px] md:w-[50px] lg:w-[60px] xl:w-[60px] object-cover"
         />
-        {menu.map((item) => (
-          <HeaderItems title={item.title} Icon={item.icon} />
-        ))}
+
+        <div className="hidden md:flex gap-8">
+          {menu.map((item) => (
+            <HeaderItems title={item.title} Icon={item.icon} />
+          ))}
+        </div>
+
+        <div className="flex md:hidden gap-8">
+          {menu.map((item, index) => index<3&& (
+            <HeaderItems title={item.title} Icon={item.icon} />
+          ))}
+        </div>
+
+        <div className="flex md:hidden">
+          <HeaderItems name={''} Icon={HiDotsVertical}/>
+        </div>
       </div>
 
       <div>
