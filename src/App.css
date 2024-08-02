@@ -1,7 +1,8 @@
 #root {
   min-width: 100vw;
   min-height: 100vh;
-  background-color: lightgoldenrodyellow;
+  background-color: #000;
+  color: #FFF;
 }
 
 .logo {

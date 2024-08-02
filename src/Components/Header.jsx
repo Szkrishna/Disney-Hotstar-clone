@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-key */
-import logo from "../assets/images/logo.png";
-import avatar from "../assets/images/avatar.png";
+import logo from "../assets/images/logo.webp";
+import avatar from "../assets/images/avatar.avif";
 import {
   HiHome,
   HiMagnifyingGlass,
@@ -45,7 +45,7 @@ function Header() {
   ];
 
   return (
-    <div className="px-10 py-2 flex items-center justify-between bg-red-200">
+    <div className="px-10 py-2 flex items-center justify-between">
       <div className="flex gap-8">
         <img
           src={logo}
@@ -59,7 +59,7 @@ function Header() {
       <div>
         <img
           src={avatar}
-          className="w-[40px] md:w-[40px] lg:w-[50px] xl:w-[50px] rounder-full cursor-pointer"
+          className="w-[30px] md:w-[30px] lg:w-[40px] xl:w-[40px] rounded-full cursor-pointer"
         />
       </div>
     </div>
