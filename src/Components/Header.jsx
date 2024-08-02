@@ -10,7 +10,7 @@ import {
 } from "react-icons/hi2";
 import { TbPremiumRights } from "react-icons/tb";
 import HeaderItems from "./HeaderItems";
-import { HiPlus, HiDotsVertical } from "react-icons/hi"
+import { HiPlus, HiDotsVertical } from "react-icons/hi";
 
 function Header() {
   const menu = [
@@ -60,14 +60,21 @@ function Header() {
           ))}
         </div>
 
-        <div className="flex md:hidden gap-8">
-          {menu.map((item, index) => index<3&& (
-            <HeaderItems title={item.title} Icon={item.icon} />
-          ))}
+        <div className="flex md:hidden gap-5">
+          {menu.map(
+            (item, index) =>
+              index < 3 && <HeaderItems title={""} Icon={item.icon} />
+          )}
         </div>
 
         <div className="flex md:hidden">
-          <HeaderItems name={''} Icon={HiDotsVertical}/>
+          <HeaderItems name={""} Icon={HiDotsVertical} />
+          <div className="absolute mt-10 ms-3 bg-[#121212] border-[1px] border-gray-700 p-2">
+            {menu.map(
+              (item, index) => index>=3&& 
+              <HeaderItems title={item.title} Icon={item.icon} />
+            )}
+          </div>
         </div>
       </div>
 
