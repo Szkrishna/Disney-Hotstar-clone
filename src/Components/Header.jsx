@@ -11,8 +11,10 @@ import {
 import { TbPremiumRights } from "react-icons/tb";
 import HeaderItems from "./HeaderItems";
 import { HiPlus, HiDotsVertical } from "react-icons/hi";
+import { useState } from "react";
 
 function Header() {
+  const [toggle, setToggle] = useState(false);
   const menu = [
     {
       title: "Home",
@@ -67,13 +69,12 @@ function Header() {
           )}
         </div>
 
-        <div className="flex md:hidden">
+        <div className="relative flex md:hidden" onClick={() => setToggle(!toggle)}>
           <HeaderItems name={""} Icon={HiDotsVertical} />
-          <div className="absolute mt-10 ms-3 bg-[#121212] border-[1px] border-gray-700 p-2">
-            {menu.map(
-              (item, index) => index>=3&& 
-              <HeaderItems title={item.title} Icon={item.icon} />
-            )}
+          <div className={`absolute mt-10 ms-2 bg-[#121212] border-[1px] border-gray-700 p-3 rounded-sm ${toggle ? 'block' : 'hidden'}`}>
+            {menu.map((item, index) => index >= 3 && (
+              <HeaderItems key={index} title={item.title} Icon={item.icon} />
+            ))}
           </div>
         </div>
       </div>
