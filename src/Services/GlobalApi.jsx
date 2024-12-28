@@ -13,5 +13,5 @@ const jwtToken = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3MTYxNjk0ZmZmYTQzNzk0YWU2OGYwN
 // });
 
 export default {
-    getTrendingVideos
+    getTrendingVideos,jwtToken
 };
